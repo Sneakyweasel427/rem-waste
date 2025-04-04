@@ -1,0 +1,107 @@
+@import "../../constants/theme.module";
+
+.root {
+  &:global(.MuiCard-root) {
+    border-radius: 1rem;
+    box-sizing: content-box;
+    border: 10px solid rgba($palette-primary-border,.9);
+    //background-color: $palette-secondary-gray;
+    transition: border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  .cardActionArea {
+    padding: 2rem 1rem 5rem;
+    border-radius: 0;
+    background-color: $palette-primary-background;
+    color: $palette-primary-white;
+
+
+    .selectedIcon {
+      visibility: hidden;
+      height: 3rem;
+      svg {
+        height: 3rem;
+        width: 3rem;
+        color: $palette-primary-purple;
+      }
+    }
+
+    .skipDetails {
+      margin-top: 1rem;
+      text-transform: uppercase;
+    }
+
+    .priceContainer {
+      margin-top: 1rem;
+      .price {
+        color: $palette-primary-purple;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      .pricePeriod {
+        margin-bottom: .5rem;
+      }
+    }
+
+    .selectButton {
+      margin-top: 2rem;
+      background-color: transparent;
+      color: $palette-primary-white;
+      border: 2px solid $palette-primary-purple;
+      border-radius: .5rem;
+      width: 50%;
+      padding: .5rem;
+      justify-self: center;
+
+      &:hover {
+        background-color: $palette-secondary-purple;
+        border-color: $palette-secondary-purple;
+        color: $palette-primary-white;
+      }
+    }
+
+
+
+
+  }
+
+
+  &.selected {
+    border-color: $palette-primary-purple;
+    .selectedIcon {
+      visibility: visible;
+    }
+
+    .selectButton {
+      background-color: $palette-primary-purple;
+      color: $palette-primary-white;
+    }
+  }
+
+  &.hovered {
+
+    border-color: $palette-secondary-purple;
+    background-color: transparent;
+
+    .cardActionArea {
+      background-color: $palette-primary-background;
+
+      .selectedIcon {
+        svg {
+          color: $palette-secondary-purple;
+        }
+      }
+
+      .priceContainer {
+        .price {
+          color: $palette-secondary-purple;
+        }
+      }
+
+      .selectButton {
+        background-color: $palette-secondary-purple;
+        border-color: $palette-secondary-purple;
+        color: $palette-primary-white;
+      }
+    }
+  }
+}
